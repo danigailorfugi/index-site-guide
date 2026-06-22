@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>问鼎娱乐 · 再次相遇</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fbe9d2 0%, #f7d9b5 50%, #f0c794 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2.5rem 1.2rem;
+      color: #3d2c1b;
+      line-height: 1.7;
+    }
+
+    .page {
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    /* 卡片容器 */
+    .card {
+      background: rgba(255, 253, 248, 0.92);
+      backdrop-filter: blur(2px);
+      border-radius: 32px;
+      box-shadow: 0 12px 30px rgba(140, 90, 40, 0.12), 0 4px 12px rgba(180, 120, 60, 0.08);
+      padding: 2.8rem 2.6rem;
+      margin-bottom: 2.6rem;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(240, 210, 170, 0.4);
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(120, 70, 30, 0.15);
+    }
+
+    /* hero 区加大 */
+    .hero {
+      text-align: center;
+      padding: 4.2rem 2.6rem 3.4rem;
+      background: linear-gradient(132deg, rgba(255,244,228,0.85) 0%, rgba(252,235,212,0.9) 100%);
+      border: 1px solid rgba(230, 190, 145, 0.35);
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #4f331b;
+      margin-bottom: 0.8rem;
+      background: linear-gradient(to right, #7a562e, #b27f4c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero .sub {
+      font-size: 1.25rem;
+      color: #7b5f3f;
+      background: rgba(240, 212, 175, 0.35);
+      display: inline-block;
+      padding: 0.3rem 1.8rem;
+      border-radius: 60px;
+      backdrop-filter: blur(4px);
+      margin-bottom: 1.6rem;
+      font-weight: 450;
+      border: 1px solid #e4c8a4;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0.8rem auto 0;
+      font-size: 1.1rem;
+      color: #503f2d;
+    }
+
+    .hero .welcome-tag {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #dbb88a;
+      padding: 0.35rem 1.6rem;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      color: #2d1f0e;
+      font-weight: 500;
+      border: 1px solid #c9a071;
+    }
+
+    /* 区域头部 */
+    .section-title {
+      font-size: 1.7rem;
+      font-weight: 520;
+      margin-bottom: 1.8rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid #e3c7a2;
+      display: inline-block;
+      color: #46301d;
+      letter-spacing: 0.5px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .feature-item {
+      background: #fcf4e9;
+      border-radius: 24px;
+      padding: 1.6rem 1.6rem 1.6rem 2rem;
+      border-left: 6px solid #dbaa7a;
+      box-shadow: 0 2px 6px rgba(150, 100, 50, 0.06);
+      transition: background 0.2s;
+    }
+
+    .feature-item h3 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #4f341c;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-item p {
+      font-size: 0.98rem;
+      color: #5c4631;
+    }
+
+    .desc-area p {
+      font-size: 1.05rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .desc-area .highlight {
+      background: #f2dfc2;
+      border-radius: 12px;
+      padding: 0.4rem 1rem;
+      display: inline-block;
+      font-weight: 500;
+    }
+
+    /* FAQ 样 */
+    .faq-item {
+      margin-bottom: 1.4rem;
+      border-bottom: 1px solid #eddcc5;
+      padding-bottom: 1.2rem;
+    }
+
+    .faq-item:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #4a3420;
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .faq-a {
+      color: #5a4531;
+      font-size: 0.98rem;
+    }
+
+    .faq-a a {
+      color: #906f47;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #b99269;
+    }
+
+    .faq-a a:hover {
+      color: #6e4f2c;
+      border-bottom: 1px solid #6e4f2c;
+    }
+
+    /* 底部链接行 */
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.8rem 2.4rem;
+      padding: 1.6rem 0.8rem;
+      background: rgba(239, 215, 181, 0.3);
+      border-radius: 48px;
+      backdrop-filter: blur(4px);
+      margin-top: 1rem;
+      border: 1px solid #dbbc99;
+    }
+
+    .footer-links a {
+      color: #503d28;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      background: rgba(255, 245, 232, 0.5);
+      border: 1px solid #d6b68b;
+      transition: 0.2s;
+      font-size: 0.98rem;
+    }
+
+    .footer-links a:hover {
+      background: #dbbc99;
+      color: #2b1d0e;
+      border-color: #b38558;
+    }
+
+    .footer-links .main-link {
+      background: #dbb386;
+      border-color: #b6895a;
+      font-weight: 600;
+      padding: 0.3rem 1.2rem;
+    }
+
+    .footer-links .main-link:hover {
+      background: #cda06f;
+    }
+
+    .fine-print {
+      text-align: center;
+      margin-top: 2.2rem;
+      font-size: 0.85rem;
+      color: #7b664e;
+      opacity: 0.65;
+      letter-spacing: 0.3px;
+    }
+
+    /* 响应式 */
+    @media (max-width: 760px) {
+      body {
+        padding: 1.5rem 0.8rem;
+      }
+      .card {
+        padding: 1.8rem 1.2rem;
+        border-radius: 24px;
+      }
+      .hero {
+        padding: 2.8rem 1.2rem 2.2rem;
+      }
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+      .section-title {
+        font-size: 1.45rem;
+      }
+      .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.6rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .hero .sub {
+        font-size: 1rem;
+        padding: 0.2rem 1.2rem;
+      }
+      .feature-item {
+        padding: 1.2rem 1rem 1.2rem 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- hero 区：再次归来・温故知新 -->
+    <div class="card hero">
+      <span class="sub">✦ 常回来看看 ✦</span>
+      <h1>熟悉的地方，新的风景</h1>
+      <p>有些体验值得反复品味。当你再次回到 <strong>问鼎娱乐</strong>，你会发现内容在生长，但那份温和的陪伴从未改变。把这里加入收藏，让每一次重逢都带着期待。</p>
+      <div class="welcome-tag">☕ 持续关注 · 总有新鲜</div>
+    </div>
+
+    <!-- 优势区：为何再次回来 -->
+    <div class="card">
+      <h2 class="section-title">为什么愿意留下</h2>
+      <div class="grid-2">
+        <div class="feature-item">
+          <h3>📌 收藏级的稳定</h3>
+          <p>入口始终如一，体验流畅自然。你可以放心地把它放进浏览器书签，每次回来界面还是那么干净舒服。</p>
+        </div>
+        <div class="feature-item">
+          <h3>🔄 内容持续更新</h3>
+          <p>不是一成不变的站点。每隔一段时间，你都会发现新的栏目、细腻的调整，但那种熟悉的氛围始终未变。</p>
+        </div>
+        <div class="feature-item">
+          <h3>🧭 从不迷路</h3>
+          <p>结构清晰，层次分明。无论你第几次访问，都能快速找到你想看的板块，无需重新适应。</p>
+        </div>
+        <div class="feature-item">
+          <h3>🎨 视觉暖意</h3>
+          <p>暖色调和圆润的卡片让浏览变成一种放松。每次打开都像回到一个舒适的小角落，不刺眼、不局促。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 说明区：从关注到习惯 -->
+    <div class="card desc-area">
+      <h2 class="section-title">从偶然到习惯</h2>
+      <p><span class="highlight">还记得第一次遇到问鼎娱乐吗？</span> 也许只是随手一点，但后来你会发现，有些网站值得被记住。这里没有催促你「立刻行动」的标语，也没有夸张的承诺——只有持续打磨的内容和稳定的陪伴。</p>
+      <p>当你再次输入 <strong>official-wendingent.com</strong>，或者从收藏夹里点开时，那种「啊，我回来了」的感觉，就是我们最想给你的。与其说这是一个平台，不如说是一个可以反复拜访的线上空间。</p>
+      <p>很多朋友选择把 <a href="https://official-wendingent.com" style="color:#7f5c33; text-decoration: none; border-bottom: 1px solid #c9a67b; font-weight: 500;">问鼎娱乐</a> 放进书签栏，因为每次访问都让人觉得熟悉又安心。没有冗余的弹窗，没有杂乱的跳转，只有你需要的核心内容与温和的浏览节奏。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="card">
+      <h2 class="section-title">常见疑问 · 简短回答</h2>
+      <div class="faq-item">
+        <div class="faq-q">❓ 我上次访问的内容还在吗？</div>
+        <div class="faq-a">大部分内容持续保留并迭代。你喜欢的板块会越来越丰富，老内容也会以更好的面貌呈现。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">❓ 需要注册或登录才能看吗？</div>
+        <div class="faq-a">完全不需要。直接通过 <a href="https://official-wendingent.com">问鼎娱乐</a> 即可浏览所有内容，没有门槛，无需个人资料。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">❓ 如何不错过更新？</div>
+        <div class="faq-a">最简单的方式：把页面加入浏览器书签，隔一段时间回来看看。我们也会在页面上通过温和的方式提示新的变化。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">❓ 移动端体验如何？</div>
+        <div class="faq-a">页面针对手机和电脑都做了适配，卡片布局和字体大小会根据屏幕自动调整，阅读体验一致舒适。</div>
+      </div>
+    </div>
+
+    <!-- 底部链接区 -->
+    <div class="footer-links">
+      <a href="https://official-wendingent.com" class="main-link">问鼎娱乐</a>
+      <a href="https://official-wendingent.com" style="background: transparent; border: none; font-weight: 400;">问鼎娱乐</a>
+      <a href="https://official-wendingent.com" style="background: transparent; border: none; font-weight: 400;">问鼎娱乐</a>
+      <a href="https://official-wendingent.com" style="background: transparent; border: none; font-weight: 400;">问鼎娱乐</a>
+    </div>
+
+    <div class="fine-print">
+      · 常回来看看 · 问鼎娱乐 ·
+    </div>
+  </div>
+</body>
+</html>
