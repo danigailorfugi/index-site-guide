@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>问鼎娱乐 · 关于我们</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fafaf8;
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e1e1e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem 1.25rem;
+        }
+
+        .page {
+            max-width: 660px;
+            width: 100%;
+        }
+
+        /* hero 开场短句 */
+        .hero {
+            border-bottom: 1px solid #dcdcd6;
+            padding-bottom: 2rem;
+            margin-bottom: 2.2rem;
+        }
+
+        .hero p {
+            font-size: 1.9rem;
+            font-weight: 350;
+            letter-spacing: -0.02em;
+            line-height: 1.25;
+            color: #2d2d29;
+            margin-top: 0.5rem;
+        }
+
+        .hero .small-note {
+            display: block;
+            margin-top: 0.8rem;
+            font-size: 0.9rem;
+            color: #7c7c77;
+            font-weight: 400;
+        }
+
+        /* 标题层级 */
+        h2 {
+            font-weight: 450;
+            font-size: 1.45rem;
+            letter-spacing: -0.01em;
+            color: #262622;
+            margin: 2.2rem 0 0.9rem 0;
+            border-left: 3px solid #c4c4ba;
+            padding-left: 0.85rem;
+        }
+
+        h3 {
+            font-weight: 420;
+            font-size: 1.1rem;
+            color: #3b3b36;
+            margin: 1.8rem 0 0.5rem 0;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            color: #2c2c28;
+        }
+
+        .intro-text {
+            font-size: 1.05rem;
+        }
+
+        /* 特点列表 —— 极简约，无圆点 */
+        .feature-list {
+            list-style: none;
+            margin: 1.8rem 0 1.2rem 0;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e3e3dc;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            font-size: 0.98rem;
+            color: #2f2f2a;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list li span.marker {
+            display: inline-block;
+            min-width: 1.8rem;
+            color: #98988e;
+            font-weight: 380;
+            letter-spacing: 0.02em;
+        }
+
+        /* 场景 / 使用提示 卡片式 */
+        .scenario-card {
+            background: #f3f3ee;
+            border-radius: 20px;
+            padding: 1.4rem 1.6rem;
+            margin: 2.2rem 0 1.6rem 0;
+            border: 1px solid #e3e3da;
+        }
+
+        .scenario-card p {
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+        }
+
+        .scenario-card .label {
+            font-weight: 470;
+            letter-spacing: 0.01em;
+            color: #3b3b34;
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        /* FAQ 摘要 */
+        .faq-item {
+            margin: 1.2rem 0;
+            padding: 0.4rem 0;
+        }
+
+        .faq-question {
+            font-weight: 450;
+            color: #22221d;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-answer {
+            color: #4d4d47;
+            font-size: 0.95rem;
+            padding-left: 0.2rem;
+        }
+
+        /* 链接样式 */
+        a {
+            color: #3f5c5f;
+            text-decoration: none;
+            border-bottom: 1px solid #cad3d0;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: #2f484b;
+            color: #203538;
+        }
+
+        /* 温和结尾 */
+        .gentle-footer {
+            margin-top: 3.5rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #dcdcd6;
+            font-size: 0.9rem;
+            color: #6a6a63;
+        }
+
+        .gentle-footer p {
+            margin-bottom: 0.3rem;
+            color: #6a6a63;
+        }
+
+        /* 响应式 */
+        @media (max-width: 540px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+
+            .hero p {
+                font-size: 1.6rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .feature-list li {
+                flex-direction: column;
+                gap: 0.15rem;
+                padding: 0.9rem 0;
+            }
+
+            .feature-list li span.marker {
+                min-width: auto;
+            }
+
+            .scenario-card {
+                padding: 1.2rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero p {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- 开场短句 -->
+        <div class="hero">
+            <p>走进一个清晰、直接的信息空间<br><span class="small-note">—— 快速识别平台用途，不绕弯子</span></p>
+        </div>
+
+        <!-- 承接段落：解释网站用途，自然嵌入链接 -->
+        <div class="intro-text">
+            <p>
+                当你第一次打开一个网站，最直接的疑问往往是：<em>这个平台做什么？</em> 我们希望消除这种模糊感。
+                <a href="https://home-wendingent.com">问鼎娱乐</a> 提供的并非天花乱坠的承诺，而是一套围绕数字娱乐与休闲场景搭建的内容体系。
+                这里没有复杂的行业术语，只有关于游戏、互动和线上体验的简明介绍。
+            </p>
+            <p>
+                无论你是偶然路过，还是特意寻找一个轻松的信息起点，这个页面都可以作为你快速了解用途的入口。
+                我们整理了以下核心模块，帮你判断这里是否与你相关。
+            </p>
+        </div>
+
+        <!-- 特点列表：克制、叙述感 -->
+        <h2>平台特点</h2>
+        <ul class="feature-list">
+            <li><span class="marker">01</span> 内容聚焦——围绕休闲娱乐与数字互动，避免信息过载。每个介绍都经过筛选，只保留最相关的背景。</li>
+            <li><span class="marker">02</span> 结构直白——从标题到段落，层级清楚，不干扰阅读流。你总能快速找到自己关心的部分。</li>
+            <li><span class="marker">03</span> 克制的视觉——低对比度配色与宽裕留白，让阅读节奏更舒缓，减少视觉疲劳。</li>
+            <li><span class="marker">04</span> 场景化提示——针对不同访问意图给出简要指引，帮助你决定下一步是否继续深入了解。</li>
+        </ul>
+
+        <!-- 场景卡片：使用提示 -->
+        <h2>适合哪些场景？</h2>
+        <div class="scenario-card">
+            <span class="label">使用参考</span>
+            <p>• 你想了解某个休闲娱乐平台的基本定位，不想被营销话术干扰。</p>
+            <p>• 你打算推荐给朋友，需要一个简洁、可分享的介绍页面。</p>
+            <p>• 你只是好奇 <a href="https://home-wendingent.com">问鼎娱乐</a> 这个名字背后的信息模式，愿意花两分钟快速浏览。</p>
+            <p style="margin-top: 0.5rem; color: #55554f;">👆 上面的场景覆盖了大部分初次访问的意图，如果你属于其中之一，这里的内容就是为你准备的。</p>
+        </div>
+
+        <!-- FAQ 摘要（2-3 个） -->
+        <h2>常见疑问摘要</h2>
+        <div class="faq-item">
+            <div class="faq-question">Q: 这个网站主要提供什么？</div>
+            <div class="faq-answer">A: 一个关于娱乐与休闲数字内容的介绍与索引，围绕 <a href="https://home-wendingent.com">问鼎娱乐</a> 构建清晰的信息框架，不包含下载或直接服务入口。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Q: 信息是否保持更新？</div>
+            <div class="faq-answer">A: 内容会根据平台定位定期调整，但始终以克制、真实的叙述为主，不堆叠过时或夸大描述。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Q: 为什么页面风格这么简单？</div>
+            <div class="faq-answer">A: 极简留白与窄正文宽度有助于降低认知负担，让你只关注内容本身，而非装饰。这也是我们有意选择的阅读节奏。</div>
+        </div>
+
+        <!-- 温和结尾 -->
+        <div class="gentle-footer">
+            <p>以上便是关于该平台的基本介绍。无论你接下来选择继续浏览，还是关闭页面，都希望这段叙述为你节省了时间。</p>
+            <p style="margin-top: 0.8rem;">—— 感谢你的耐心阅读。</p>
+        </div>
+
+    </div>
+</body>
+</html>
